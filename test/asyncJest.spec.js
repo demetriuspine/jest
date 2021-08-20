@@ -18,11 +18,11 @@ describe('1 - O retorno do telefonema', () => {
     // Insira seu teste assíncrono aqui
   });
   test('ocupado', async () => {
+    const expectedError = new Error('Infelizmente não podemos atender...');
     try {
       await answerPhone(false);
-    }
-    catch (err) {
-      expect(err).toEqual(new Error('Infelizmente não podemos atender...'));
+    } catch (err) {
+      expect(err).toEqual(expectedError);
     }
     // Insira seu teste assíncrono aqui
   });
